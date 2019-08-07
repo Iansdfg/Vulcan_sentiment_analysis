@@ -10,6 +10,6 @@ def get_senti(documents):
     text_analytics = TextAnalyticsClient(endpoint=text_analytics_url, credentials=credentials)
 
     response = text_analytics.sentiment(documents=documents)
-    for document in response.documents:
+    for pos, document in enumerate(response.documents):
         print("Document Id: ", document.id, ", Sentiment Score: ",
-              "{:.2f}".format(document.score))
+              "{:.2f}".format(document.score),", Time: ",  documents[pos]['time'])
