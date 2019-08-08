@@ -29,4 +29,7 @@ if __name__ == '__main__':
         }
     ]
 
-    get_senti(documents)
+    res = get_senti(documents)
+
+    for ele in res:
+        print(ele)

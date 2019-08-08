@@ -3,6 +3,7 @@ from msrest.authentication import CognitiveServicesCredentials
 
 
 def get_senti(documents):
+
     subscription_key = "f56de4b340b6472f951a0b5b7cfc8f8c"
     credentials = CognitiveServicesCredentials(subscription_key)
 
@@ -10,6 +11,15 @@ def get_senti(documents):
     text_analytics = TextAnalyticsClient(endpoint=text_analytics_url, credentials=credentials)
 
     response = text_analytics.sentiment(documents=documents)
+    res = []
     for pos, document in enumerate(response.documents):
-        print("Document Id: ", document.id, ", Sentiment Score: ",
-              "{:.2f}".format(document.score),", Time: ",  documents[pos]['time'])
+        dic = {}
+        dic["Document Id"] = int(document.id)
+        dic["Sentence"] = documents[pos]['text']
+        dic["Sentiment Score"] = float("{:.2f}".format(document.score))
+        dic["Time"] = documents[pos]['time']
+        res.append(dic)
+        # print("Document Id: ", document.id, ", Sentiment Score: ",
+        #       "{:.2f}".format(document.score),", Time: ",  documents[pos]['time'])
+        #
+    return res
