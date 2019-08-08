@@ -14,6 +14,10 @@ def get_data(jason_file):
             count += 1
             output_datum['text'] = input_datum['DisplayText']
             output_datum['time'] = input_datum['Offset']
+<<<<<<< HEAD
+            # time:
+=======
+>>>>>>> 28c84762a7ffa2836db0febf6ebfcfb6e76b7ac0
             output_data.append(output_datum)
     return output_data
 
