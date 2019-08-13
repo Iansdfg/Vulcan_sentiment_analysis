@@ -15,15 +15,16 @@ if __name__ == '__main__':
 
     for sigle_dic in senti_res:
         video_id = '001'
-        value = 0.7
+        #value = 0.7
 
         data = {
-                'Document Id': sigle_dic['Document Id'],
-                'Sentiment Score':sigle_dic['Sentiment Score'],
-                'Time':sigle_dic['Time'],
-                'Sentence':sigle_dic['Sentence']
+                'video_id': video_id,
+                'doc_id': sigle_dic['Document Id'],
+                'senti_score': sigle_dic['Sentiment Score'],
+                'time': (sigle_dic['Time']/10000000),
+                'sentence': sigle_dic['Sentence']
                 }
 
         # print(data)
-        table_name = 'text_analytics'
+        table_name = 'texts_analytics'
         create_data(table_name, data, connection)

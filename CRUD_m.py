@@ -8,15 +8,9 @@ def get_connection():
     database = 'Empthetic'
     username = 'vulcan'
     password = 'P@ssw0rd'
-    driver = '{FreeTDS}'
-    TDS_VERSION = 8.0
-    connection = pyodbc.connect(
-        'DRIVER={};SERVER={};PORT=1433;DATABASE={};UID={};PWD={};TDS_VERSION={}'.format(driver, server, database,
-                                                                                        username, password,
-                                                                                        TDS_VERSION))
-
+    driver= '{ODBC Driver 13 for SQL Server}'
+    connection = pyodbc.connect('DRIVER='+driver+';SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password)
     return connection
-
 
 def close_connection(connection):
     # Commit the data
