@@ -2,7 +2,6 @@ from azure.cognitiveservices.language.textanalytics import TextAnalyticsClient
 from msrest.authentication import CognitiveServicesCredentials
 import json
 
-
 def get_data(jason_file):
     with open(jason_file) as json_file:
         output_data = []
@@ -17,7 +16,6 @@ def get_data(jason_file):
             # time:
             output_data.append(output_datum)
     return output_data
-
 
 def get_senti(documents):
     subscription_key = "f56de4b340b6472f951a0b5b7cfc8f8c"
