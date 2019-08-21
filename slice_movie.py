@@ -4,8 +4,6 @@ name = "Defuse_conflicts_62s"
 max = 119
 
 
-
-
 def slice_video(name, max):
     for i in range(0, max, 10):
         start = i
