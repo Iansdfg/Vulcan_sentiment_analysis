@@ -17,6 +17,7 @@ if __name__ == '__main__':
         video_id = '001'
         #value = 0.7
 
+        
         data = {
                 'video_id': video_id,
                 'doc_id': sigle_dic['Document Id'],
@@ -25,6 +26,7 @@ if __name__ == '__main__':
                 'sentence': sigle_dic['Sentence']
                 }
 
+        
         # print(data)
         table_name = 'texts_analytics'
         create_data(table_name, data, connection)
