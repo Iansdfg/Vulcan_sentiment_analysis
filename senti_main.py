@@ -6,9 +6,11 @@ from CRUD_m import read_data
 from CRUD_m import close_connection
 from CRUD_m import get_connection
 
+
 if __name__ == '__main__':
     documents = get_data('test.json')
     senti_res = get_senti(documents)
+    
 
     connection = get_connection()
 
@@ -22,6 +24,7 @@ if __name__ == '__main__':
                 'time': (sigle_dic['Time']/10000000),
                 'sentence': sigle_dic['Sentence']
                 }
+
 
         
         # print(data)
